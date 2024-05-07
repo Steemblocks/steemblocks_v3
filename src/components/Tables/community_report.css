@@ -1,0 +1,147 @@
+.table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  margin-top: 15px;
+  margin-bottom: 70px;
+  box-sizing: content-box;
+  width: 94%;
+  height: 100vh;
+  /* Adjust this to fit your specific layout requirements */
+  overflow: auto;
+  margin-left: 57px;
+}
+
+.table_history {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  margin-top: 15px;
+  margin-bottom: 70px;
+  box-sizing: content-box;
+  width: 94%;
+  height: 100vh;
+  /* Adjust this to fit your specific layout requirements */
+  overflow: auto;
+  /* margin-left: 57px; */
+}
+
+.descriptionpage {
+  margin-top: 30px;
+}
+
+.table td,
+.table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  max-width: 100vh;
+  overflow: auto;
+  text-overflow: ellipsis;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table tr:hover {
+  background-color: #ddd;
+}
+
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 12px;
+  text-align: center;
+  background-color: #1e88e5;
+  color: white;
+}
+
+/* #4CAF50 */
+
+.table_history td,
+.table_history th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  max-width: 100vh;
+  overflow: auto;
+  text-overflow: ellipsis;
+}
+
+.table_history tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table_history tr:hover {
+  background-color: #ddd;
+}
+
+.table_history th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 12px;
+  text-align: center;
+  background-color: #1e88e5;
+  color: white;
+}
+
+.communityclass {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.com-container {
+  display: flex;
+  text-align: center;
+
+}
+
+.comm-table {
+  max-width: 100%;
+}
+
+.trans-header {
+  text-align: center;
+}
+
+input {
+  height: 2px !important;
+}
+
+.btn-com {
+  background-color: #1e88e5;
+  /* Green */
+  border: none;
+  color: white;
+  margin-left: 2px;
+  padding: 10px 24px;
+  text-align: center;
+  border-radius: 12px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin-Top: 9px
+}
+
+.btn-com:hover {
+  background-color: #1e88e5;
+  box-shadow: #282c34;
+}
+
+@media (max-width: 400px) {
+  .com-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+  }
+
+  .table {
+    margin-left: 0px;
+    /* width: 60%; */
+  }
+
+  .table_history {
+    margin-left: 0px;
+    /* width: 60%; */
+  }
+}

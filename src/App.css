@@ -1,0 +1,137 @@
+@import url('/src/fonts/style.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial Regular";
+}
+@layer utilities{
+  .mobile-nav-drawer{
+    @apply p-3 
+  }
+  .mbnav-btn{
+@apply w-full ml-1.5 rounded-2xl text-xl  my-2 flex items-center gap-1  px-1.5 py-1 hover:bg-[#4CAF50] hover:scale-95 hover:text-white hover:outline outline-1  /* border border-[#282c34] */
+}
+.border-collapse{
+  border-collapse: collapse;
+}
+
+th{
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  --tw-bg-opacity: 1;
+  background-color: rgb(4 170 109 / var(--tw-bg-opacity));
+ 
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  @apply text-white py-3 text-center bg-[#04AA6D]
+}
+}
+
+@layer components{
+  .table{
+    @apply mt-2  overflow-hidden border-collapse rounded-2xl table-auto 
+  }
+  tr:nth-child(even) {
+    @apply bg-slate-200 border-spacing-10
+  }
+  .table td,th{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    /* overflow: hidden;
+    text-overflow: ellipsis; */
+  }
+  .table tbody>tr:hover{
+    @apply bg-slate-300 scale-[101%] transition-all  
+  }
+  
+  .table_trans{
+    @apply mt-2  overflow-hidden border-collapse rounded-2xl table-auto
+  }
+  .table_trans tbody>tr:hover{
+    @apply bg-slate-300 scale-[101%] transition-all 
+  }
+  .table_trans td,th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    max-width: 100vh;
+    overflow: auto;
+    text-overflow: ellipsis;
+  }
+  .heading2{
+    @apply capitalize font-bold text-2xl my-10 lg:my-5 lg:whitespace-nowrap
+  }
+  .navlink{
+    @apply capitalize cursor-pointer hover:bg-[#04AA6D] rounded-md p-2 transition-all ease-in
+}
+  .navbtn{
+    @apply capitalize text-xs rounded-xl bg-[#4CAF50]/80 lg:bg-[#4CAF50] hover:bg-[#04AA6D] text-white mt-1 px-6 py-[10px] hover:scale-105  
+}
+
+}
+
+
+/* Light mode styles */
+.light-mode {
+  /* Your light mode styles here */
+  background-color: #ffffff; /* Example background color for light mode */
+  color: #000000; /* Example text color for light mode */
+}
+
+/* Dark mode styles */
+.dark-mode {
+  /* Your dark mode styles here */
+  background-color: #121212; /* Example background color for dark mode */
+  color: #ffffff; /* Example text color for dark mode */
+}
+
+/* Additional styles for specific elements in dark mode */
+.dark-mode table {
+  border-color: #444444; /* Example table border color for dark mode */
+}
+
+/* Example styles for table rows in dark mode */
+.dark-mode tr:nth-child(even) {
+  background-color: #1a1a1a; /* Example even row background color for dark mode */
+}
+
+.dark-mode tr:nth-child(odd) {
+  background-color: #222222; /* Example odd row background color for dark mode */
+}
+
+/* Example styles for buttons in dark mode */
+.dark-mode button {
+  background-color: #333333; /* Example button background color for dark mode */
+  color: #ffffff; /* Example button text color for dark mode */
+}
+
+
+
+/* Add specific styles for the footer in dark mode */
+.dark-mode footer {
+  background-color: #333;
+  color: #fff;
+  /* Additional dark mode styles for the footer */
+}
+
+/* App.css */
+.bg-black {
+  background-color: #121212;
+  /* Any other styles you want for the black background */
+}
+.table-container {
+  width: 100%; /* Adjust this width as needed */
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap; /* Prevents table from wrapping */
+}
+
+/* Additional styles for the table and its cells can be added here */
