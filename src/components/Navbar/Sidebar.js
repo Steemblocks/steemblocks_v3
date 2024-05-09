@@ -138,7 +138,7 @@ export default function Sidebar() {
                       !open ? "flex" : "hidden xl:flex text-xs"
                     }`}
                   >
-                    Accont ranking
+                    Account Ranking
                   </span>
                 </Link>
               </li>
