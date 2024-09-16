@@ -22,6 +22,10 @@ FROM nginx:stable-alpine
 # Copy the built React app from the build stage to Nginx's default directory
 COPY --from=build /app/build /usr/share/nginx/html
 
+# Copy the custom Nginx configuration file to the container
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+
 # Expose the port that Nginx will listen on
 EXPOSE 80
 
