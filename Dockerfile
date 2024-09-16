@@ -1,24 +1,21 @@
-# Stage 1: Build the React app
-FROM node:18-alpine as build
+# Example Dockerfile for a React app
+FROM node:16-alpine
 
-WORKDIR /app
+# Set working directory
+WORKDIR /usr/src/app
 
-# Copy the package files and install dependencies
-COPY package.json package-lock.json ./
-RUN npm install
+# Install dependencies
+COPY package.json yarn.lock ./
+RUN yarn install --frozen_lockfile
 
-# Copy the rest of the code and build the app
+# Copy local code to the container
 COPY . .
-RUN npm run build
 
-# Stage 2: Serve the React app using Nginx
-FROM nginx:stable-alpine
+# Build the project
+RUN yarn build
 
-# Copy the build folder to Nginx's public directory
-COPY --from=build /app/build /usr/share/nginx/html
+# Install `serve` to serve the app on port 3000
+RUN yarn global add serve
 
-# Expose port 80
-EXPOSE 80
-
-# Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Command to run the serve
+CMD ["serve", "-s", "build", "-l", "3000"]
