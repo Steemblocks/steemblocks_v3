@@ -4,20 +4,17 @@ FROM node:18-alpine AS build
 # Set working directory inside the container
 WORKDIR /app
 
-# Install Yarn globally
-RUN npm install -g yarn
+# Copy package.json and package-lock.json to install dependencies
+COPY package.json package-lock.json ./
 
-# Copy package.json and yarn.lock to install dependencies
-COPY package.json yarn.lock ./
-
-# Install dependencies using Yarn
-RUN yarn install
+# Install dependencies using npm
+RUN npm install
 
 # Copy the rest of the application files
 COPY . .
 
 # Build the React app for production
-RUN yarn build
+RUN npm run build
 
 # Stage 2: Serve the app using Nginx
 FROM nginx:stable-alpine
